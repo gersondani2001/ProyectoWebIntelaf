@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--encabezado y reconocimieto de lenguaje en ingles-->
+<head>
+	<!--codigo de permiso de caracteres especiales-->
+	<meta charset="UTF-8">
+	<!--nombre del index-->
+	<title>Intelaf</title>
+	<!--enlace del css-->
+	<link rel="stylesheet" href="css/style.css">
+	<!--enlace del bootstrap 4-->
+	<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+	<!--hosted libraries-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+</head>
+<!--codigo del body cuerpo de la pagina web-->
+<body>
+
+	<!--codigo del body cuerpo principal de la pagina web-->
+
+
+
+
+	<!--codigo container no.1 vista pricipal-->
+	<div class="container-fluid cont1">
+		<div class="row">
+			<div class="col-md-6"><h1 class="styh1">Intelaf_2019</h1></div>
+			<div class="col-md-6"><img src="img/logo.png" alt="intelaf" class="imgintef"></div>
+		</div>
+	</div>
+
+
+
+
+	<!--container no.2 formulario-->
+
+	<div class="container-fluid cont2">
+		<div class="row">
+			<div class="col-md-6">
+				<form>
+					<label><h3>Formulario de Registro de Productos.</h3></br></label>
+
+				    <div class="form-group"> <!-- Full Name -->
+				        <label for="full_name_id" class="control-label">Nombre del Producto: </label>
+				        <input type="text" class="form-control" id="full_name_id" name="full_name" placeholder="Ejemplo: Cel/Com/Tab/Acc">
+				    </div>    
+
+				    <div class="form-group"> <!-- Street 1 -->
+				        <label for="street1_id" class="control-label">Marca del Producto:</label>
+				        <input type="text" class="form-control" id="street1_id" name="street1" placeholder="Ejemplo: DELL, hp, AlienWare, etc.">
+				    </div>                    
+				                            
+				    <div class="form-group"> <!-- Street 2 -->
+				        <label for="street2_id" class="control-label">Precio del Producto:</label>
+				        <input type="text" class="form-control" id="street2_id" name="street2" placeholder="Ejemplo: Q, $, etc.">
+				    </div>    
+
+				    <div class="form-group"> <!-- City-->
+				        <label for="city_id" class="control-label">Pais de origen:</label>
+				        <input type="text" class="form-control" id="city_id" name="city" placeholder="Ejemplo: Guatemala, Mexico, Estados Unidos, etc.">
+				    </div>                                    
+				                            
+				    <div class="form-group"> <!-- State Button -->
+				        <label for="state_id" class="control-label">Ciudad de origen:</label>
+				        <select class="form-control" id="state_id">
+				            <option value="AL">Guatemala</option>
+				            <option value="AK">Alaska</option>
+				            <option value="AZ">Arizona</option>
+				            <option value="AR">Arkansas</option>
+				            <option value="CA">California</option>
+				            <option value="CO">Colorado</option>
+				            <option value="CT">Connecticut</option>
+				            <option value="DE">Delaware</option>
+				            <option value="DC">District Of Columbia</option>
+				            <option value="FL">Florida</option>
+				            <option value="GA">Georgia</option>
+				            <option value="HI">Hawaii</option>
+				            <option value="ID">Idaho</option>
+				            <option value="IL">Illinois</option>
+				            <option value="IN">Indiana</option>
+				            <option value="IA">Iowa</option>
+				            <option value="KS">Kansas</option>
+				            <option value="KY">Kentucky</option>
+				            <option value="LA">Louisiana</option>
+				            <option value="ME">Maine</option>
+				            <option value="MD">Maryland</option>
+				            <option value="MA">Massachusetts</option>
+				            <option value="MI">Michigan</option>
+				            <option value="MN">Minnesota</option>
+				            <option value="MS">Mississippi</option>
+				            <option value="MO">Missouri</option>
+				            <option value="MT">Montana</option>
+				            <option value="NE">Nebraska</option>
+				            <option value="NV">Nevada</option>
+				            <option value="NH">New Hampshire</option>
+				            <option value="NJ">New Jersey</option>
+				            <option value="NM">New Mexico</option>
+				            <option value="NY">New York</option>
+				            <option value="NC">North Carolina</option>
+				            <option value="ND">North Dakota</option>
+				            <option value="OH">Ohio</option>
+				            <option value="OK">Oklahoma</option>
+				            <option value="OR">Oregon</option>
+				            <option value="PA">Pennsylvania</option>
+				            <option value="RI">Rhode Island</option>
+				            <option value="SC">South Carolina</option>
+				            <option value="SD">South Dakota</option>
+				            <option value="TN">Tennessee</option>
+				            <option value="TX">Texas</option>
+				            <option value="UT">Utah</option>
+				            <option value="VT">Vermont</option>
+				            <option value="VA">Virginia</option>
+				            <option value="WA">Washington</option>
+				            <option value="WV">West Virginia</option>
+				            <option value="WI">Wisconsin</option>
+				            <option value="WY">Wyoming</option>
+				        </select>                    
+				    </div>
+				    
+				    <div class="form-group"> <!-- Zip Code-->
+				        <label for="zip_id" class="control-label">Codigo del producto a su cargo: </label>
+				        <input type="password" class="form-control" id="zip_id" name="zip" placeholder="#####">
+				    </div>        
+				    
+				    <div class="form-group"> <!-- Submit Button -->
+				        <button type="submit" class="btn btn-primary">Subir/DataBase.</button>
+				    </div>     
+
+				</form>
+
+
+
+			</div>
+			<div class="col-md-6">
+				
+				<nav class="nav"><h3>Ilustacion del Producto.</h3></nav>
+				<div class="ilustracion">
+					<img src="" value="imgfor" id="imgfor" >
+				</div>
+				<div class="buttonfor">
+					<button type="button" class="btn btn-primary">Subir IMG.</button>
+					<button type="button" class="btn btn-danger">Subir/DataBase</button>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+
+	<!--
+	1.codigo del js enlace
+	2.bootstrap 4 js
+	3.jquery
+	-->
+	<script src="js/script.js"></script>
+	<script src="lib/bootstrap/js/bootstrap.js"></script>
+	<script src="lib/node_modules/jquery/dist/jquery.js"></script>
+</body>
+</html>
