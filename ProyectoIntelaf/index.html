@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="App">
 <!--encabezado y reconocimieto de lenguaje en ingles-->
 <head>
 	<!--codigo de permiso de caracteres especiales-->
@@ -12,9 +12,15 @@
 	<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
 	<!--hosted libraries-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+
+    <!--firebase -->
+    <link rel="stylesheet" href="https://firebase.google.com/docs/web/setup#config-web-app">
+
+
 </head>
 <!--codigo del body cuerpo de la pagina web-->
-<body>
+<body ng-controller="control">
 
 	<!--codigo del body cuerpo principal de la pagina web-->
 
@@ -42,27 +48,33 @@
 
 				    <div class="form-group"> <!-- Full Name -->
 				        <label for="full_name_id" class="control-label">Nombre del Producto: </label>
-				        <input type="text" class="form-control" id="full_name_id" name="full_name" placeholder="Ejemplo: Cel/Com/Tab/Acc">
+				        <input ng-model="producto.nombre" type="text" class="form-control" id="full_name_id" name="full_name" placeholder="Ejemplo: Cel/Com/Tab/Acc">
 				    </div>    
 
 				    <div class="form-group"> <!-- Street 1 -->
 				        <label for="street1_id" class="control-label">Marca del Producto:</label>
-				        <input type="text" class="form-control" id="street1_id" name="street1" placeholder="Ejemplo: DELL, hp, AlienWare, etc.">
+				        <input ng-model="producto.marca" type="text" class="form-control" id="street1_id" name="street1" placeholder="Ejemplo: DELL, hp, AlienWare, etc.">
 				    </div>                    
 				                            
+   
 				    <div class="form-group"> <!-- Street 2 -->
 				        <label for="street2_id" class="control-label">Precio del Producto:</label>
-				        <input type="text" class="form-control" id="street2_id" name="street2" placeholder="Ejemplo: Q, $, etc.">
+				        <input ng-model="producto.precio"  type="number" min="0.01" step="0.01"  class="form-control" id="street2_id" name="street2" placeholder="Ejemplo: Q, $, etc.">
+				    </div> 
+   
+				    <div class="form-group"> <!-- Street 2 -->
+				        <label for="street2_id" class="control-label">Categoria del Producto:</label>
+				        <input ng-model="producto.categoria"type="text" class="form-control" id="street2_id" name="street2" placeholder="Ejemplo: Telefonia, Gamig, Celulares.">
 				    </div>    
 
 				    <div class="form-group"> <!-- City-->
 				        <label for="city_id" class="control-label">Pais de origen:</label>
-				        <input type="text" class="form-control" id="city_id" name="city" placeholder="Ejemplo: Guatemala, Mexico, Estados Unidos, etc.">
+				        <input ng-model="producto.pais" type="text" class="form-control" id="city_id" name="city" placeholder="Ejemplo: Guatemala, Mexico, Estados Unidos, etc.">
 				    </div>                                    
 				                            
 				    <div class="form-group"> <!-- State Button -->
 				        <label for="state_id" class="control-label">Ciudad de origen:</label>
-				        <select class="form-control" id="state_id">
+				        <select ng-model="producto.ciudad" class="form-control" id="state_id">
 				            <option value="AL">Guatemala</option>
 				            <option value="AK">Alaska</option>
 				            <option value="AZ">Arizona</option>
@@ -119,11 +131,11 @@
 				    
 				    <div class="form-group"> <!-- Zip Code-->
 				        <label for="zip_id" class="control-label">Codigo del producto a su cargo: </label>
-				        <input type="password" class="form-control" id="zip_id" name="zip" placeholder="#####">
+				        <input ng-model="producto.codigo" type="password" class="form-control" id="zip_id" name="zip" placeholder="#####">
 				    </div>        
 				    
 				    <div class="form-group"> <!-- Submit Button -->
-				        <button type="submit" class="btn btn-primary">Subir/DataBase.</button>
+				        <button class="btn btn-primary" ng-click="cargar(producto)">Subir/DataBase.</button>
 				    </div>     
 
 				</form>
@@ -132,19 +144,39 @@
 
 			</div>
 			<div class="col-md-6">
+
+                <!--formulario de la funcion de imagen-->
+                <!--formulario de la funcion de imagen-->
+              <div class="col-md-6">
+                <output id="list"></output>
+                <h3 class="bajo">Imagen del Producto</h3><br>
+                <!--botones-->
+                <div class="row">
+                  <div class="col-md-7"><input class="bimaa" type="file" id="files" name="files[]" multiple /></div>
+                  <div class="col-md-5"><button class="bima">Editar</button></div>
+                </div>
+                <!--botones-->
+              </div>
 				
-				<nav class="nav"><h3>Ilustacion del Producto.</h3></nav>
+				<!--nav class="nav"><h3>Ilustacion del Producto.</h3></nav>
 				<div class="ilustracion">
 					<img src="" value="imgfor" id="imgfor" >
 				</div>
 				<div class="buttonfor">
 					<button type="button" class="btn btn-primary">Subir IMG.</button>
 					<button type="button" class="btn btn-danger">Subir/DataBase</button>
-				</div>
-
+				</div>-->			
 			</div>
 		</div>
 	</div>
+
+
+
+
+
+
+
+
 
 
 
@@ -152,9 +184,18 @@
 	1.codigo del js enlace
 	2.bootstrap 4 js
 	3.jquery
+	4.angular js
 	-->
+    <!--codigo del enlace de conexion con firebase-->
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
 	<script src="js/script.js"></script>
 	<script src="lib/bootstrap/js/bootstrap.js"></script>
 	<script src="lib/node_modules/jquery/dist/jquery.js"></script>
+
+
+
+	
 </body>
 </html>

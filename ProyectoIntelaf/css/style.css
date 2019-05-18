@@ -46,3 +46,26 @@ trabajar codigo fuente en este para del css*/
 .buttonfor{
 	margin-top:2%;
 }
+
+
+.bima{
+  border-radius: 10px;
+  width: 100%;
+  background: #000000 !important;
+  color: #fd5f00 !important;
+  font-size:30px !important;
+  font-family: 'Oswald', sans-serif !important;
+}
+.bajo{
+  margin-top: 40%;
+}
+.bimaa{
+  text-decoration: none;
+  border-radius: 10px;
+  width: 100%;
+  background: #000000 !important;
+  color: #fd5f00 !important;
+  font-size:25px !important;
+  font-family: 'Oswald', sans-serif !important;
+  padding: 1%;
+}
